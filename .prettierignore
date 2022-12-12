@@ -1,0 +1,8 @@
+package.json
+.editorconfig
+.gitignore
+.prettierignore
+LICENSE
+*.lock
+yarn-error.log
+/lib
