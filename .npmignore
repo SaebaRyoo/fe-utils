@@ -1,0 +1,7 @@
+.github
+coverage/
+node_modules/
+.jest.config.mjs
+.editorconfig
+tsconfig.json
+jest.config.js
