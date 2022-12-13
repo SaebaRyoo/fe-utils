@@ -4,10 +4,10 @@
 name: Node.js CI
 
 on:
-  # push:
-  #   branches: [ "main" ]
-  pull_request:
+  push:
     branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
 
 jobs:
   build:
@@ -76,7 +76,7 @@ jobs:
       # 读取当前版本号
       - name: 读取当前版本号
         id: version
-        uses: ashley-taylor/read-json-property-action@main
+        uses: ashley-taylor/read-json-property-action@v1.0
         with:
           # 读取版本号
           path: ./package.json
@@ -85,7 +85,7 @@ jobs:
       # 创建GitHub Release
       - name: 创建GitHub Release
         id: create_release
-        uses: actions/create-release@main
+        uses: actions/create-release@latest
         env:
           # 配置github token （这个无需去github配置，默认存在的）
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -102,7 +102,7 @@ jobs:
       # 上传Release Asset
       - name: 上传Release Asset
         id: upload-release-asset
-        uses: actions/upload-release-asset@main
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
