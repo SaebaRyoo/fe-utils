@@ -20,15 +20,15 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: yarn
-    - run: yarn run test
-    - run: yarn run build --if-present
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: yarn
+      - run: yarn run test
+      - run: yarn run build --if-present
 
   # publish-npm任务
   publish-npm:
@@ -42,19 +42,21 @@ jobs:
       # 检查并切换到main分支
       - name: 检查main分支
         # 使用actions/checkout插件
-        uses: actions/checkout@main
+        uses: actions/checkout@v3
 
       # 安装node
       - name: 设置Node.js
         # 使用actions/setup-node插件
-        uses: actions/setup-node@main
+        # Setup .npmrc file to publish to npm
+        uses: actions/setup-node@v3
         with:
           # node版本
           node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
 
       # 初始化缓存
       - name:  缓存
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-dependencies
         with:
           path: node_modules
@@ -73,11 +75,19 @@ jobs:
       - name: 发布NPM包
         # 执行发布代码
         run: |
-          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          npm ci
           npm publish
         env:
           # 配置 npm access token 环境变量
           NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
+      # - name: 发布NPM包
+      #   # 执行发布代码
+      #   run: |
+      #     npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+      #     npm publish
+      #   env:
+      #     # 配置 npm access token 环境变量
+      #     NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
 
       # 创建GitHub Release
       - name: 创建GitHub Release
