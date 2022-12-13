@@ -4,8 +4,8 @@
 name: Node.js CI
 
 on:
-  # push:
-  #   branches: [ "main" ]
+  push:
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -52,6 +52,7 @@ jobs:
         with:
           # node版本
           node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
 
       # 初始化缓存
       - name:  缓存
@@ -74,11 +75,19 @@ jobs:
       - name: 发布NPM包
         # 执行发布代码
         run: |
-          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          npm ci
           npm publish
         env:
           # 配置 npm access token 环境变量
           NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
+      # - name: 发布NPM包
+      #   # 执行发布代码
+      #   run: |
+      #     npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+      #     npm publish
+      #   env:
+      #     # 配置 npm access token 环境变量
+      #     NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
 
       # 创建GitHub Release
       - name: 创建GitHub Release
