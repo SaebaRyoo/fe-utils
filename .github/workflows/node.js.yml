@@ -52,6 +52,8 @@ jobs:
         with:
           # node版本
           node-version: ${{ matrix.node-version }}
+      - run: yarn
+      - run: yarn run build --if-present
 
       # 初始化缓存
       - name:  缓存
@@ -74,7 +76,6 @@ jobs:
       - name: 发布NPM包
         # 执行发布代码
         run: |
-          yarn
           npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
           npm publish
         env:
