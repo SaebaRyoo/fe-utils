@@ -76,7 +76,7 @@ jobs:
       # 读取当前版本号
       - name: 读取当前版本号
         id: version
-        uses: ashley-taylor/read-json-property-action@v1
+        uses: ashley-taylor/read-json-property-action@v1.0
         with:
           # 读取版本号
           path: ./package.json
