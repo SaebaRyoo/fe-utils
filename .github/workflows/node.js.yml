@@ -52,14 +52,30 @@ jobs:
         with:
           # node版本
           node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm publish
+        env:
+          # 配置 npm access token 环境变量
+          NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
 
-      # 初始化缓存
-      - name:  缓存
-        uses: actions/cache@v3
-        id: cache-dependencies
-        with:
-          path: node_modules
-          key: ${{runner.OS}}-${{hashFiles('**/yarn.lock')}}
+      # # 初始化缓存
+      # - name:  缓存
+      #   uses: actions/cache@v3
+      #   id: cache-dependencies
+      #   with:
+      #     path: node_modules
+      #     key: ${{runner.OS}}-${{hashFiles('**/yarn.lock')}}
+
+      # 发布NPM包
+      # - name: 发布NPM包
+      #   # 执行发布代码
+      #   run: |
+      #     npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+      #     npm publish
+      #   env:
+      #     # 配置 npm access token 环境变量
+      #     NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
 
       # 读取当前版本号
       - name: 读取当前版本号
@@ -70,15 +86,6 @@ jobs:
           path: ./package.json
           property: version
 
-      # 发布NPM包
-      - name: 发布NPM包
-        # 执行发布代码
-        run: |
-          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          npm publish
-        env:
-          # 配置 npm access token 环境变量
-          NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
 
       # 创建GitHub Release
       - name: 创建GitHub Release
@@ -112,6 +119,6 @@ jobs:
           asset_content_type: application/js
 
       # 刷新缓存
-      - name: 刷新缓存
-        run: |
-          curl https://purge.jsdelivr.net/npm/iemotion-pic@latest/lib/name.json
+      # - name: 刷新缓存
+      #   run: |
+      #     curl https://purge.jsdelivr.net/npm/iemotion-pic@latest/lib/name.json
