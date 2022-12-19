@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import { setCookie, getCookie, removeCookie } from '../cookie';
 
 describe('cookie test', () => {
