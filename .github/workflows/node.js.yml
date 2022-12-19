@@ -27,8 +27,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: yarn
-      - run: yarn run test
+      # 测试，并生成测试覆盖率文件
+      - run: yarn run coveralls
       - run: yarn run build --if-present
+      # 上报
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   # publish-npm任务
   publish-npm:
