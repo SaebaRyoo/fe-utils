@@ -1,4 +1,7 @@
 # FE-utils
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/SaebaRyoo/fe-utils/node.js.yml?branch=main) ![npm](https://img.shields.io/npm/v/@lxnxbnq/utils) [![Coverage Status](https://coveralls.io/repos/github/SaebaRyoo/fe-utils/badge.svg?branch=main)](https://coveralls.io/github/SaebaRyoo/fe-utils?branch=main) ![GitHub](https://img.shields.io/github/license/SaebaRyoo/fe-utils)
+
+
 前端工具库,总结前端日常开发过程中的通用代码
 
 

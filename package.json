@@ -18,6 +18,7 @@
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "lint": "eslint --ext .ts src/",
     "prettier": "prettier -c --write \"src/**/*\"",
     "prepare": "husky install"
@@ -38,6 +39,7 @@
     "@types/jest": "^29.2.4",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
     "@typescript-eslint/parser": "^5.46.0",
+    "coveralls": "^3.1.1",
     "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
