@@ -82,13 +82,13 @@ jobs:
       # 读取当前版本号
       - name: 读取当前版本号
         id: version
-        uses: notiz-dev/github-action-json-property@release
+        uses: ashley-taylor/read-json-property-action@v1.0
         with:
           # 读取版本号
-          path: './package.json'
-          prop_path: 'version'
+          path: ./package.json
+          property: version
 
-      - run: echo ${{steps.format_script.outputs.prop}}
+      - run: echo ${{steps.format_script.outputs.value}}
 
       # 创建Release
       - name: release
@@ -96,8 +96,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ./lib/index.umd.js
-          name: v${{steps.version.outputs.prop}}
-          tag_name: v${{steps.version.outputs.prop}}
+          name: v${{steps.version.outputs.value}}
+          tag_name: v${{steps.version.outputs.value}}
 
       # # 创建GitHub Release
       # - name: 创建GitHub Release
