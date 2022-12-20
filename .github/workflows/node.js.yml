@@ -84,7 +84,7 @@ jobs:
       # 创建Release
       - name: release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+        # if: startsWith(github.ref, 'refs/tags/')
         with:
           files: ./lib/index.umd.js
           name: v${{steps.version.outputs.prop}}
