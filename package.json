@@ -1,6 +1,6 @@
 {
   "name": "@lxnxbnq/utils",
-  "version": "0.0.2-beta.5",
+  "version": "0.0.2-beta.6",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "jsnext:main": "lib/index.esm.js",
@@ -8,6 +8,11 @@
   "types": "lib/index.d.ts",
   "files": [
     "lib"
+  ],
+  "keywords": [
+    "@lxnxbnq/utils",
+    "fe-utils",
+    "utils"
   ],
   "repository": {
     "type": "git",
