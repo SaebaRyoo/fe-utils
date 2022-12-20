@@ -89,6 +89,8 @@ jobs:
           files: ./lib/index.umd.js
           name: v${{steps.version.outputs.prop}}
           tag_name: v${{steps.version.outputs.prop}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # 发布NPM包
       - name: 发布NPM包
