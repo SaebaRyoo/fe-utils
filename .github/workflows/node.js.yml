@@ -33,6 +33,9 @@ jobs:
       # 上报
       - name: Coveralls
         uses: coverallsapp/github-action@master
+        env:
+          # 配置 coveralls token 环境变量
+          COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_REPO_TOKEN}}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
