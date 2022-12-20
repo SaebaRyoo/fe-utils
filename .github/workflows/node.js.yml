@@ -85,8 +85,8 @@ jobs:
         uses: notiz-dev/github-action-json-property@release
         with:
           # 读取版本号
-          path: ./package.json
-          prop_path: version
+          path: './package.json'
+          prop_path: 'version'
 
       # 创建Release
       - name: release
