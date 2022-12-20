@@ -88,6 +88,8 @@ jobs:
           path: './package.json'
           prop_path: 'version'
 
+      - run: echo ${{steps.format_script.outputs.prop}}
+
       # 创建Release
       - name: release
         uses: softprops/action-gh-release@v1
