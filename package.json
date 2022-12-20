@@ -1,6 +1,6 @@
 {
   "name": "@lxnxbnq/utils",
-  "version": "0.0.2-beta.9",
+  "version": "0.0.2-beta.10",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "jsnext:main": "lib/index.esm.js",
