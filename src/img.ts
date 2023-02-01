@@ -1,4 +1,4 @@
-// 将图片流流转为base64
+// 将图片流转为base64
 const convertImgStreamToBase64 = (
   originFileObj: File,
   callback: (r: string | ArrayBuffer | null) => void
