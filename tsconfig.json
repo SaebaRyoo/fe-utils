@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5" /* 编译目标 */,
+    "target": "ES6" /* 编译目标 */,
     "module": "commonjs" /* 项目模块类型 */,
     "lib": ["ES2018", "DOM"],
     "allowJs": true /* 是否允许js代码 */,

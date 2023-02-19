@@ -39,12 +39,13 @@ console.log(sum(1,2,3,4))
 
 ### Function
 #### [debounce](https://github.com/SaebaRyoo/fe-utils/blob/main/src/function.ts#L1) 该方法传入函数，并返回一个只能在指定延时结束后才能调用的函数
-#### [debounce](https://github.com/SaebaRyoo/fe-utils/blob/main/src/function.ts#L10) 该方法传入函数，并返回一个在规定时间内只能被调用一次的函数
+#### [throttle](https://github.com/SaebaRyoo/fe-utils/blob/main/src/function.ts#L10) 该方法传入函数，并返回一个在规定时间内只能被调用一次的函数
 
 
 ### Array
 
-#### [arrayEqual](https://github.com/SaebaRyoo/fe-utils/blob/main/src/arrayEqual.ts#L1) 判断两个数组是否相等
+#### [arrayEqual](https://github.com/SaebaRyoo/fe-utils/blob/main/src/array.ts#L1) 判断两个数组是否相等
+#### [arrayUnique](https://github.com/SaebaRyoo/fe-utils/blob/main/src/array.ts#L21) 数组去重
 
 ### cookie
 
@@ -58,6 +59,7 @@ console.log(sum(1,2,3,4))
 #### [isLeapYear](https://github.com/SaebaRyoo/fe-utils/blob/main/src/date.ts#L4) 判断是否闰年
 #### [remainTime](https://github.com/SaebaRyoo/fe-utils/blob/main/src/date.ts#L10) 获取一个倒计时
 #### [isSameDay](https://github.com/SaebaRyoo/fe-utils/blob/main/src/date.ts#L28) 判断是否同一天
+#### [isWorkDay](https://github.com/SaebaRyoo/fe-utils/blob/main/src/date.ts#50) 是否为工作日
 
 ### [deepClone](https://github.com/SaebaRyoo/fe-utils/blob/main/src/deepClone.ts) 支持各种数据类型的深拷贝
 
@@ -73,6 +75,8 @@ console.log(sum(1,2,3,4))
 
 #### [downloadImgStream](https://github.com/SaebaRyoo/fe-utils/blob/main/src/img.ts#L12) 下载图片流
 
+### 对象操作
+#### [isEmpty](https://github.com/SaebaRyoo/fe-utils/blob/main/src/object.ts#L1) 判断是否为空对象
 ### 随机数据生成
 
 #### [randomColor](https://github.com/SaebaRyoo/fe-utils/blob/main/src/random.ts#L5) 生成随机颜色

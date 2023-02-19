@@ -42,4 +42,13 @@ const isSameDay = (date1: Date | string, date2: Date | string) => {
   );
 };
 
+/**
+ * 判断传入日期是否为工作日
+ * @param date 日期字符串、日期对象
+ * @returns bool
+ */
+// const isWorkday = (date: string | Date) => {
+//   date = new Date(date);
+//   return date.getDay() < 5;
+// };
 export { isLeapYear, remainTime, isSameDay };
