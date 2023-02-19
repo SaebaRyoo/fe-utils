@@ -46,4 +46,20 @@ describe('Date: ', () => {
       expect(isSameDay(new Date(), new Date())).toBeTruthy();
     });
   });
+
+  // describe('isWorkDay: ', () => {
+  //   it(`isWorkDay(new Date('2022-02-19')) should return false`, () => {
+  //     expect(isWorkday(new Date('2022-02-19'))).toBeFalsy()
+  //   })
+  //   it(`isWorkDay('2022-02-19') should return false`, () => {
+  //     expect(isWorkday('2022-02-19')).toBeFalsy()
+  //   })
+
+  //   it(`isWorkDay(new Date('2022-02-20')) should return true`, () => {
+  //     expect(isWorkday(new Date('2022-02-20'))).toBeTruthy()
+  //   })
+  //   it(`isWorkDay('2022-02-20') should return true`, () => {
+  //     expect(isWorkday('2022-02-20')).toBeTruthy()
+  //   })
+  // })
 });
