@@ -1,4 +1,4 @@
-import { debounce, throttle } from '../function';
+import { debounce, throttle, compareVersion } from '../function';
 
 describe(`debounce: `, () => {
   beforeAll(() => {
@@ -25,5 +25,37 @@ describe(`throttle: `, () => {
     throttled();
 
     expect(cb).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe(`compare version: `, () => {
+  it(`compareVersion("1.0", "1.0.0") should return 0`, () => {
+    expect(compareVersion('1.0', '1.0.0')).toBe(0);
+  });
+  it(`compareVersion("1", "1.0.0") should return 0`, () => {
+    expect(compareVersion('1.0', '1.0.0')).toBe(0);
+  });
+  it(`compareVersion("1", "1.0.0") should return 0`, () => {
+    expect(compareVersion('01.0.0', '1.0.0')).toBe(0);
+  });
+
+  it(`compareVersion("0.0.1", "0.1.0") should return -1`, () => {
+    expect(compareVersion('0.0.1', '0.1.0')).toBe(-1);
+  });
+  it(`compareVersion("0.0.01", "0.1.0") should return -1`, () => {
+    expect(compareVersion('0.0.01', '0.1.0')).toBe(-1);
+  });
+  it(`compareVersion("2.6.09", "2.6.10") should return -1`, () => {
+    expect(compareVersion('2.6.09', '2.6.10')).toBe(-1);
+  });
+
+  it(`compareVersion("3", "2.7.090") should return 1`, () => {
+    expect(compareVersion('3', '2.7.090')).toBe(1);
+  });
+  it(`compareVersion("3.1", "2.7.090") should return 1`, () => {
+    expect(compareVersion('3.1', '2.7.090')).toBe(1);
+  });
+  it(`compareVersion("03.1", "2.7.090") should return 1`, () => {
+    expect(compareVersion('03.1', '2.7.090')).toBe(1);
   });
 });
