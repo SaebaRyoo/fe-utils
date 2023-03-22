@@ -3,6 +3,7 @@ export { getCookie, setCookie, removeCookie } from './cookie';
 export { getBrowserInfo } from './device';
 export { formatFloat } from './formatFloat';
 export { formatMoney } from './formatMoney';
+export { debounce, throttle, compareVersion } from './function';
 export { convertImgStreamToBase64, downloadImgStream } from './img';
 export { isEmpty } from './object';
 export { randomColor, randomNum, randomPhone, randomName } from './random';
