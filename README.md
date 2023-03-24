@@ -65,7 +65,7 @@ console.log(sum(1,2,3,4))
 
 
 
-### 图片相关操作
+### 流相关操作
 - [convertImgStreamToBase64](https://github.com/SaebaRyoo/fe-utils/blob/main/src/img.ts#L2) 图片流转base64
 
 - [downloadImgStream](https://github.com/SaebaRyoo/fe-utils/blob/main/src/img.ts#L12) 下载图片流
