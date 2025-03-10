@@ -1,7 +1,7 @@
 {
   // 保存时-自动格式化 - 启用eslint
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true // 每次保存的时候将代码按eslint格式进行修复
+    "source.fixAll.eslint": "explicit"
   },
   "javascript.inlayHints.enumMemberValues.enabled": false,
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
