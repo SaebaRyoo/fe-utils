@@ -5,7 +5,8 @@ describe(`debounce: `, () => {
     jest.useFakeTimers();
   });
   it(`return an new function and runs it after wait time`, () => {
-    jest.spyOn(global, 'setTimeout');
+    // 将 global 替换为 globalThis
+    jest.spyOn(globalThis, 'setTimeout');
     const callback = jest.fn();
     const debounced = debounce(callback, 1000);
     debounced();

@@ -96,7 +96,8 @@ console.log(sum(1,2,3,4))
 
 - [formatMoney](https://github.com/SaebaRyoo/fe-utils/blob/main/src/formatMoney.ts) 按千位逗号分割金额
 - [getBrowserInfo](https://github.com/SaebaRyoo/fe-utils/blob/main/src/device.ts) 获取浏览名称和版本
-
+- [IDWorker](https://github.com/SaebaRyoo/fe-utils/blob/main/src/IdWorker.ts) 基于雪花算法的分布式ID生成器，可生成唯一的64位ID
+- [parseTimeToSeconds](https://github.com/SaebaRyoo/fe-utils/blob/main/src/parseTimeToSeconds.ts) 将时间字符串(如"5m", "2h", "1d")转换为对应的秒数
 
 ### 验证函数
 
